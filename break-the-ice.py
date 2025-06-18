@@ -20,12 +20,15 @@ def mouse_click(btn, row, col):
         newgame()
     game[row][col] = "titanic_resized.png"
     time.sleep(0.2)
-    if "iceberg_resized.png" not in game[row]:
+    if "iceberg_resized.png" not in game[row] and "penguin_resized.png" in game[row]:
         # Show game over thing
         print("game over")
         time.sleep(5)
         newgame()
-    if "iceberg_resized.png" not in list(zip(*game))[col]:
+    if (
+        "iceberg_resized.png" not in list(zip(*game))[col]
+        and "penguin_resized.png" in list(zip(*game))[col]
+    ):
         # Show game over thing
         print("game over")
         time.sleep(5)
