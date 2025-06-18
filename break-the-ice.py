@@ -1,6 +1,7 @@
 from game2dboard import Board
 from tkinter import messagebox
 import random
+import time
 
 # Global consts
 FIELD_WIDTH = 7
@@ -11,13 +12,31 @@ MSG = "ESC: Close    F2: Restart"
 
 
 def mouse_click(btn, row, col):
+    selected = game[row][col]
+    if selected is "penguin_resized.png":
+        # Show game over thing
+        print("game over")
+        time.sleep(5)
+        newgame()
     game[row][col] = "titanic_resized.png"
+    if "iceberg_resized.png" not in game[row]:
+        # Show game over thing
+        print("game over")
+        time.sleep(5)
+        newgame()
+    if "iceberg_resized.png" not in game[:][col]:
+        # Show game over thing
+        print("game over")
+        time.sleep(5)
+        newgame()
+
 
 def kb_click(key):
     if key == "Escape":
         game.close()
     elif key == "F2":
         newgame()
+
 
 def newgame():
     for i in range(FIELD_WIDTH):
