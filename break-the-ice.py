@@ -15,9 +15,9 @@ def newgame():
     for i in range(FIELD_WIDTH):
         for j in range(FIELD_HEIGHT):
             if i == 0 and j == 0:
-                game[i][j] = "penguin.png"
+                game[i][j] = "penguin_resized.png"
             else:
-                game[i][j] = "iceberg.png"
+                game[i][j] = "iceberg_resized.png"
     game.shuffle()
     game.print(MSG)
 
@@ -30,5 +30,5 @@ game.margin_color = "MediumTurquoise"
 game.cell_color = "LightCyan"
 #game.on_key_press = kb_click
 #game.on_mouse_click = mouse_click
-#game.on_start = newgame
+game.on_start = newgame
 game.show()
