@@ -11,7 +11,7 @@ MSG = "ESC: Close    F2: Restart"
 
 
 def mouse_click(btn, row, col):
-    game[row][col] = 0
+    game[row][col] = "titanic_resized.png"
 
 
 def newgame():
