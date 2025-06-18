@@ -13,6 +13,11 @@ MSG = "ESC: Close    F2: Restart"
 def mouse_click(btn, row, col):
     game[row][col] = 0
 
+def kb_click(key):
+    if key == "Escape":
+        game.close()
+    elif key == "F2":
+        newgame()
 
 def newgame():
     for i in range(FIELD_WIDTH):
@@ -32,7 +37,7 @@ game.margin = MARGIN_SIZE
 game.grid_color = "MediumTurquoise"
 game.margin_color = "MediumTurquoise"
 game.cell_color = "LightCyan"
-# game.on_key_press = kb_click
+game.on_key_press = kb_click
 game.on_mouse_click = mouse_click
 game.on_start = newgame
 game.show()
