@@ -13,12 +13,13 @@ MSG = "ESC: Close    F2: Restart"
 
 def mouse_click(btn, row, col):
     selected = game[row][col]
-    if selected is "penguin_resized.png":
+    if selected == "penguin_resized.png":
         # Show game over thing
         print("game over")
         time.sleep(5)
         newgame()
     game[row][col] = "titanic_resized.png"
+    time.sleep(0.2)
     if "iceberg_resized.png" not in game[row]:
         # Show game over thing
         print("game over")
