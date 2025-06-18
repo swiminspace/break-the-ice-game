@@ -24,7 +24,7 @@ def mouse_click(btn, row, col):
         print("game over")
         time.sleep(5)
         newgame()
-    if "iceberg_resized.png" not in game[:][col]:
+    if "iceberg_resized.png" not in list(zip(*game))[col]:
         # Show game over thing
         print("game over")
         time.sleep(5)
